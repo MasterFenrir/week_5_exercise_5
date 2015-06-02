@@ -1,0 +1,20 @@
+<?xml version="1.0"?> 
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+    
+<hibernate-mapping> 
+    <class 
+        name="hibernatedemo.Message" 
+        table="messages"> 
+        <id 
+            name="id" 
+            column="MESSAGE_ID"> 
+            <generator class="increment"/> 
+        </id>
+		
+        <property 
+            name="message" 
+            column="MESSAGE_TEXT"/>  
+    </class> 
+</hibernate-mapping> 
