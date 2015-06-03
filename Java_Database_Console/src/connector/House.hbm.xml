@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="connector.House" table="wo">
+        <meta attribute="class-description">
+            This class contains the houses
+        </meta>
+        <id name="id" type="int" column="WOID">
+            <generator class="native"/>
+        </id>
+        <property name="broker" column="MKMDWID" type="int"/>
+        <property name="address" column="Address" type="string"/>
+        <property name="postal" column="PC" type="string"/>
+        <property name="city" column="City" type="string"/>
+        <property name="price" column="Vraagprijs" type="float"/>
+        <property name="priceType" column="Vraagprijssoort" type="int"/>
+        <property name="typeObject" column="SoortObject" type="int"/>
+        <property name="sortHouse" column="SoortWoning" type="int"/>
+        <property name="typeHouse" column="TypeWoning" type="int"/>
+        <property name="sortBouw" column="SoortBouw" type="int"/>
+        <property name="description" column="Omschrijving" type="string"/>
+        <property name="buildYear" column="BouwJaar" type="int"/>
+        <property name="garden" column="TuinAanwezig" type="int"/>
+        <property name="gardenSurfaceArea" column="TuinOppervlakte" type="float"/>
+        <property name="status" column="Status" type="int"/>
+        <property name="livingSurfaceArea" column="WoonOppervlakte" type="float"/>
+        <property name="capacity" column="Inhoud" type="float"/>
+        <property name="roomCount" column="AantalKamers" type="int"/>
+        <property name="bathRoomCount" column="AantalBadkamers" type="int"/>
+        <property name="levels" column="AantalWoonlagen" type="int"/>
+        <property name="surfaceArea" column="PerceelOppervlakte" type="float"/>
+        <property name="date" column="PlaatsingDatum" type="string"/>
+    </class>
+</hibernate-mapping>
