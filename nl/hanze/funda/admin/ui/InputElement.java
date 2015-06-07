@@ -4,6 +4,10 @@ import java.awt.*;
 import java.util.List;
 
 public interface InputElement {
-    public List<Component> getElements();
+    List<Component> getElements();
+
+    String getValue();
+
+    void setValue(String value);
 
 }

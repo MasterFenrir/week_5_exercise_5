@@ -21,4 +21,14 @@ public class InputCheckbox implements InputElement {
 
         return rv;
     }
+
+    @Override
+    public String getValue() {
+        return checkBox.getText();
+    }
+
+    @Override
+    public void setValue(String value) {
+        checkBox.setSelected(value.equals("1"));
+    }
 }

@@ -27,6 +27,16 @@ public class InputTextField implements InputElement {
         return rv;
     }
 
+    @Override
+    public String getValue() {
+        return textArea.getText();
+    }
+
+    @Override
+    public void setValue(String value) {
+        textArea.setText(value);
+    }
+
     private void createElements(String inputLabel) {
         textArea = new JTextArea();
         textArea.setLineWrap(true);

@@ -11,8 +11,8 @@ import java.util.Map;
 
 @SuppressWarnings("serial")
 public class MainScreen extends JFrame {
-    private Map<String, InputElement> makelaarPanelEls = new HashMap<String, InputElement>();
-    private Map<String, InputElement> woningPanelEls = new HashMap<String, InputElement>();
+    private Map<String, InputElement> makelaarPanelEls = new HashMap<>();
+    private Map<String, InputElement> woningPanelEls = new HashMap<>();
     private JPanel notifyPanel, makelaarPanel, woningPanel;
 
     private JLabel makelaarNotifyLabel, woNotifyLabel;
@@ -80,16 +80,16 @@ public class MainScreen extends JFrame {
 
     private void addMakelaarButtons() {
         makelaarPanelEls.put("zoekbutton", new InputButton("Zoeken", new int[]{385, 10, 100, 22}));
-        makelaarPanelEls.put("verwijderbutton", new InputButton("Verwijder medewerker", new int[]{385, 70, 180, 22}));
-        makelaarPanelEls.put("opslaanbutton", new InputButton("Medewerker opslaan", new int[]{385, 95, 180, 22}));
+        makelaarPanelEls.put("verwijderbuttonMakelaar", new InputButton("Verwijder medewerker", new int[]{385, 70, 180, 22}));
+        makelaarPanelEls.put("opslaanbuttonMakelaar", new InputButton("Medewerker opslaan", new int[]{385, 95, 180, 22}));
 
         makelaarPanelEls.put("koppelbutton", new InputButton("Koppelen", new int[]{280, 145, 99, 22}));
-        makelaarPanelEls.put("zoekbutton", new InputButton("Verwijder kantoor", new int[]{385, 145, 180, 22}));
-        makelaarPanelEls.put("opslaanbutton", new InputButton("Kantoorgegevens opslaan", new int[]{385, 170, 180, 22}));
+        makelaarPanelEls.put("verwijderbuttonKantoor", new InputButton("Verwijder kantoor", new int[]{385, 145, 180, 22}));
+        makelaarPanelEls.put("opslaanbuttonKantoor", new InputButton("Kantoorgegevens opslaan", new int[]{385, 170, 180, 22}));
     }
 
     private void addWoningTextFields() {
-        woningPanelEls.put("zoeken", new InputField("Zoeken", new int[]{430, 10, 100, 22}, 80));
+        woningPanelEls.put("zoeken", new InputField("Zoeken", new int[]{180, 10, 200, 22}));
         woningPanelEls.put("koppelmkid", new InputField("Koppel MakelaarID", new int[]{150, 70, 250, 22}, 140));
         woningPanelEls.put("adres", new InputField("Adres", new int[]{150, 95, 250, 22}, 140));
         woningPanelEls.put("postcode", new InputField("Postcode", new int[]{150, 120, 250, 22}, 140));
@@ -105,6 +105,7 @@ public class MainScreen extends JFrame {
     }
 
     private void addWoningButtons() {
+        woningPanelEls.put("zoekbutton", new InputButton("Zoeken", new int[]{385, 10, 100, 22}));
         woningPanelEls.put("koppelbutton", new InputButton("Koppelen", new int[]{430, 70, 100, 22}));
         woningPanelEls.put("opslaan", new InputButton("Opslaan", new int[]{100, 595, 120, 22}));
         woningPanelEls.put("verwijderen", new InputButton("Verwijderen", new int[]{350, 595, 120, 22}));
@@ -153,5 +154,21 @@ public class MainScreen extends JFrame {
 
         makelaarPanel.add(makelaarNotifyLabel);
         woningPanel.add(woNotifyLabel);
+    }
+
+    public InputElement getMakelaarElement(String key) {
+        return makelaarPanelEls.get(key);
+    }
+
+    public InputElement getWoningElement(String key) {
+        return woningPanelEls.get(key);
+    }
+
+    public void setMakelaarNotifyLabel(String text) {
+        makelaarNotifyLabel.setText(text);
+    }
+
+    public void setWoNotifyLabel(String text) {
+        woNotifyLabel.setText(text);
     }
 }

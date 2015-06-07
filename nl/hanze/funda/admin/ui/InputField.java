@@ -36,6 +36,16 @@ public class InputField implements InputElement {
         return rv;
     }
 
+    @Override
+    public String getValue() {
+        return textField.getText();
+    }
+
+    @Override
+    public void setValue(String value) {
+        textField.setText(value);
+    }
+
     private void createElements(String label) {
         createTextField();
         createLabel(label);

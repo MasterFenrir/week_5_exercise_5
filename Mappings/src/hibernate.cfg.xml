@@ -30,6 +30,7 @@
         <mapping class="tables.StatusEntity"/>
         <mapping class="tables.TypewoningEntity"/>
         <mapping class="tables.WoEntity"/>
+        <mapping class="tables.WoningliggingEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

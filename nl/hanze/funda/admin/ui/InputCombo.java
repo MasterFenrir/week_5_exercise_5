@@ -34,6 +34,16 @@ public class InputCombo implements InputElement {
         return rv;
     }
 
+    @Override
+    public String getValue() {
+        return (String) comboBox.getSelectedItem();
+    }
+
+    @Override
+    public void setValue(String value) {
+        comboBox.setSelectedItem(value);
+    }
+
     private void createElements(String label) {
         createComboBox();
         createLabel(label);
@@ -48,5 +58,11 @@ public class InputCombo implements InputElement {
         label = new JLabel(inputLabel);
         label.setBounds(bounds[0] - textSeperation, bounds[1], bounds[2], bounds[3]);
     }
+
+    public void addValues(List<String> values) {
+        values.forEach(e -> comboBox.addItem(e));
+    }
+
+
 
 }
