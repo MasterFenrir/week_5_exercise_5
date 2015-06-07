@@ -170,5 +170,10 @@ public class Controller {
         mainScreen.getWoningElement("status").setValue(status.getName());
         mainScreen.getWoningElement("tuinaanwezig").setValue(wo.getTuinAanwezig().toString());
 
+        int i = 1;
+        for (Object[] e : user.getLiggings(woid)) {
+            mainScreen.getWoningElement("ligging" + i).setValue(((LiggingEntity) e[1]).getName());
+            i++;
+        }
     }
 }

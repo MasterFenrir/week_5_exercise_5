@@ -25,4 +25,8 @@ public abstract class User {
                 " AND a.accountNr = b.accountNr AND a.mkid = c.mkid").list();
     }
 
+    public List<Object[]> getLiggings(String houseID) {
+        return session.createQuery("FROM WoningliggingEntity AS a, LiggingEntity AS b WHERE a.woWoid = " + houseID + " AND a.liggingId = b.id").list();
+    }
+
 }
