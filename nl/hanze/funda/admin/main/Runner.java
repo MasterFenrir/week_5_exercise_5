@@ -1,5 +1,7 @@
 package nl.hanze.funda.admin.main;
 
+import nl.hanze.funda.admin.logic.Controller;
+
 import javax.swing.*;
 
 public class Runner {
@@ -12,7 +14,6 @@ public class Runner {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        new Main();
+        new Controller();
     }
 }
